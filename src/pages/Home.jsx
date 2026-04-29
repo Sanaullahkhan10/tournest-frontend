@@ -20,16 +20,20 @@ function Home() {
             "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
           padding: "6rem 2rem",
           textAlign: "center",
+          overflow: "hidden",
+          textAlign: "center",
         }}
       >
         <h1
           style={{
-            fontSize: "3.5rem",
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
             fontWeight: "800",
             marginBottom: "1rem",
             background: "linear-gradient(to right, #f97316, #fb923c)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            lineHeight: "1.3",
+            padding: "0.2rem 0",
           }}
         >
           Discover Your Next Adventure
