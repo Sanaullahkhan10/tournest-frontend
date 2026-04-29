@@ -1,7 +1,8 @@
 import axios from "axios";
+import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api/v1",
+  baseURL: "https://tournest-backend.onrender.com/api/v1",
   withCredentials: true,
 });
 
