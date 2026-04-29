@@ -98,7 +98,8 @@ function Footer() {
           color: "#6b7280",
         }}
       >
-        © 2024 TourNest. All rights reserved.
+        © 2024 TourNest. All rights reserved. &nbsp;|&nbsp; Made with ❤️ by
+        Sanaullah Khan
       </div>
     </footer>
   );
