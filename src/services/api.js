@@ -7,9 +7,21 @@ const API = axios.create({
 
 export const getAllTours = () => API.get("/tours");
 export const getTour = (id) => API.get(`/tours/${id}`);
-export const login = (data) => API.post("/users/login", data);
+export const login = async (data) => {
+  const res = await API.post("/users/login", data);
+  if (res.data.status === "success") {
+    localStorage.setItem("isLoggedIn", "true");
+  }
+  return res;
+};
+
+export const logout = async () => {
+  const res = await API.get("/users/logout");
+  localStorage.removeItem("isLoggedIn");
+  return res;
+};
 export const signup = (data) => API.post("/users/signup", data);
-export const logout = () => API.get("/users/logout");
+
 export const getMe = () => API.get("/users/me");
 export const updateMe = (data) => API.patch("/users/updateMe", data);
 export const getMyBookings = () => API.get("/bookings/my-tours");

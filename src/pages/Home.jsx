@@ -124,17 +124,24 @@ function Home() {
                 }
               >
                 {/* Tour Image */}
-                <div
-                  style={{
-                    background: "linear-gradient(135deg, #f97316, #0f3460)",
-                    height: "200px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "4rem",
-                  }}
-                >
-                  🏔️
+                {/* Tour Image */}
+                <div style={{ height: "200px", overflow: "hidden" }}>
+                  <img
+                    src={`${import.meta.env.VITE_API_URL.replace("/api/v1", "")}/img/tours/${tour.imageCover}`}
+                    alt={tour.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.style.background =
+                        "linear-gradient(135deg, #f97316, #0f3460)";
+                      e.target.parentElement.innerHTML =
+                        "<div style='height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem'>🏔️</div>";
+                    }}
+                  />
                 </div>
 
                 <div style={{ padding: "1.5rem" }}>

@@ -15,8 +15,9 @@ function Login() {
     setLoading(true);
     try {
       await login({ email, password });
+      localStorage.setItem("isLoggedIn", "true");
       toast.success("Welcome back!");
-      navigate("/dashboard");
+      window.location.href = "/dashboard";
     } catch {
       toast.error("Invalid email or password!");
     } finally {

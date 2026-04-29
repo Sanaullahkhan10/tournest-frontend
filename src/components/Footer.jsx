@@ -2,6 +2,8 @@ import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
   return (
     <footer
       style={{
@@ -57,18 +59,22 @@ function Footer() {
             >
               Dashboard
             </Link>
-            <Link
-              to="/login"
-              style={{ color: "#9ca3af", textDecoration: "none" }}
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              style={{ color: "#9ca3af", textDecoration: "none" }}
-            >
-              Sign Up
-            </Link>
+            {!isLoggedIn && (
+              <>
+                <Link
+                  to="/login"
+                  style={{ color: "#9ca3af", textDecoration: "none" }}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  style={{ color: "#9ca3af", textDecoration: "none" }}
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
